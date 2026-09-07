@@ -64,8 +64,8 @@ export function TripsCatalog() {
 
         <div className="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((trip) => {
-            const title = lang === 'pl' ? trip.titlePl : lang === 'ar' ? trip.titleAr : trip.title
-            const description = lang === 'pl' ? trip.descriptionPl : lang === 'ar' ? trip.descriptionAr : trip.description
+            const title = lang === 'pl' ? trip.titlePl : lang === 'de' ? trip.titleDe : lang === 'it' ? trip.titleIt : lang === 'ar' ? trip.titleAr : trip.title
+            const description = lang === 'pl' ? trip.descriptionPl : lang === 'de' ? trip.descriptionDe : lang === 'it' ? trip.descriptionIt : lang === 'ar' ? trip.descriptionAr : trip.description
             
             return (
               <article

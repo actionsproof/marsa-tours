@@ -250,13 +250,183 @@ export const translations = {
       rights: "جميع الحقوق محفوظة.",
       rightsAr: "جميع الحقوق محفوظة لمرسى تورز"
     }
+  },
+  de: {
+    nav: {
+      about: "Über uns",
+      experiences: "Erlebnisse",
+      trips: "Ausflüge",
+      reviews: "Bewertungen",
+      contact: "Kontakt"
+    },
+    hero: {
+      title: "Wo die Wüste auf das Meer trifft",
+      arabicTitle: "حيث تلتقي الصحراء بالبحر",
+      subtitle: "Unvergessliche Erlebnisse in Marsa Alam, Ägypten",
+      cta: "Ausflüge entdecken",
+      sea: "Meer",
+      desert: "Wüste",
+      sunSky: "Sonne & Himmel"
+    },
+    about: {
+      title: "Über Marsa Tours",
+      description: "Wir schaffen unvergessliche Erlebnisse, wo das Rote Meer auf die goldene Wüste trifft. Vom Schnorcheln mit Delfinen bis zur Wüstensafari unter den Sternen ist jede Reise mit Marsa Tours darauf ausgelegt, Ihnen die besten Naturwunder Ägyptens zu zeigen.",
+      sea: "Meeresabenteuer",
+      desert: "Wüstensafaris",
+      culture: "Kulturtouren",
+      experiencesCount: "Kuratierte Erlebnisse"
+    },
+    featured: {
+      title: "Ausgewählte Erlebnisse",
+      subtitle: "Drei Wege, sich in Marsa Alam zu verlieben",
+      seaTitle: "Meeresabenteuer",
+      seaDesc: "Schnorcheln, Bootsausflüge und Korallenriffe voller Schildkröten und buntem Meeresleben.",
+      seaCta: "Ausflüge ansehen",
+      desertTitle: "Wüstensafari",
+      desertDesc: "Jeep-Abenteuer durch die Dünen mit Beduinen-Dinner, Kamelritt und Sonnenuntergang.",
+      desertCta: "Safari ansehen",
+      relaxTitle: "Entspannen & Entdecken",
+      relaxDesc: "Entspannung, unberührte Strände und charmante Küstenstädte, die darauf warten, entdeckt zu werden.",
+      relaxCta: "Mehr entdecken"
+    },
+    trips: {
+      title: "Unsere Ausflüge",
+      subtitle: "Finden Sie Ihr nächstes Abenteuer",
+      description: "Meer, Wüste und Kultur – handverlesene Ausflüge in Marsa Alam und Umgebung.",
+      all: "Alle",
+      sea: "Meer",
+      desert: "Wüste",
+      culture: "Kultur",
+      service: "Service",
+      bookNow: "Jetzt buchen"
+    },
+    testimonials: {
+      title: "Bewertungen",
+      subtitle: "Geliebt von Reisenden aus aller Welt"
+    },
+    contact: {
+      title: "Kontaktieren Sie uns",
+      subtitle: "Marsa Alam ruft",
+      description: "Bereit, Ihr Abenteuer zu beginnen? Kontaktieren Sie uns noch heute.",
+      name: "Name",
+      email: "E-Mail",
+      phone: "Telefon",
+      trip: "Interessanter Ausflug",
+      tripPlaceholder: "z.B. Abu Dabbab",
+      message: "Nachricht",
+      messagePlaceholder: "Erzählen Sie uns von Ihrer Reise...",
+      send: "Nachricht senden",
+      thankYou: "Vielen Dank!",
+      thankYouMessage: "Ihre Nachricht wurde empfangen. Unser Team wird sich in Kürze bei Ihnen melden.",
+      location: "Standort",
+      whatsapp: "WhatsApp-Chat"
+    },
+    footer: {
+      tagline: "WO DIE WÜSTE AUF DAS MEER TRIFFT",
+      description: "Unvergessliche Erlebnisse, wo das Rote Meer auf die goldene Wüste trifft. Meer, Wüste und Himmel – endlose Schönheit in Marsa Alam, Ägypten.",
+      descriptionAr: "حيث تلتقي الصحراء بالبحر — مرسى تورز",
+      quickLinks: "Schnelllinks",
+      contactTitle: "Kontakt",
+      location: "Marsa Alam, Ägypten",
+      phone: "+20 122 494 1412",
+      email: "info@marsa.tours",
+      website: "www.marsa.tours",
+      rights: "Alle Rechte vorbehalten.",
+      rightsAr: "جميع الحقوق محفوظة لمرسى تورز"
+    }
+  },
+  it: {
+    nav: {
+      about: "Chi siamo",
+      experiences: "Esperienze",
+      trips: "Escursioni",
+      reviews: "Recensioni",
+      contact: "Contatto"
+    },
+    hero: {
+      title: "Dove il Deserto Incontra il Mare",
+      arabicTitle: "حيث تلتقي الصحراء بالبحر",
+      subtitle: "Esperienze indimenticabili a Marsa Alam, Egitto",
+      cta: "Scopri le escursioni",
+      sea: "Mare",
+      desert: "Deserto",
+      sunSky: "Sole e Cielo"
+    },
+    about: {
+      title: "Su Marsa Tours",
+      description: "Creiamo esperienze indimenticabili dove il Mar Rosso incontra il deserto dorato. Dallo snorkeling con i delfini ai safari nel deserto sotto le stelle, ogni viaggio con Marsa Tours è progettato per mostrarvi il meglio delle meraviglie naturali dell'Egitto.",
+      sea: "Avventure Marine",
+      desert: "Safari nel Deserto",
+      culture: "Tour Culturali",
+      experiencesCount: "Esperienze curate"
+    },
+    featured: {
+      title: "Esperienze in Evidenza",
+      subtitle: "Tre modi per innamorarsi di Marsa Alam",
+      seaTitle: "Avventure Marine",
+      seaDesc: "Snorkeling, gite in barca e barriere coralline piene di tartarughe e vita marina colorata.",
+      seaCta: "Vedi escursioni",
+      desertTitle: "Safari nel Deserto",
+      desertDesc: "Avventura in jeep tra le dune con cena beduina, giro in cammello e tramonti mozzafiato.",
+      desertCta: "Vedi safari",
+      relaxTitle: "Relax e Scoperta",
+      relaxDesc: "Relax, spiagge incontaminate e affascinanti città costiere che aspettano di essere esplorate.",
+      relaxCta: "Scopri di più"
+    },
+    trips: {
+      title: "Le Nostre Escursioni",
+      subtitle: "Trova la tua prossima avventura",
+      description: "Mare, deserto e cultura – escursioni selezionate a Marsa Alam e dintorni.",
+      all: "Tutte",
+      sea: "Mare",
+      desert: "Deserto",
+      culture: "Cultura",
+      service: "Servizi",
+      bookNow: "Prenota ora"
+    },
+    testimonials: {
+      title: "Recensioni",
+      subtitle: "Amato dai viaggiatori di tutto il mondo"
+    },
+    contact: {
+      title: "Contattaci",
+      subtitle: "Marsa Alam ti chiama",
+      description: "Pronto per iniziare la tua avventura? Contattaci oggi stesso.",
+      name: "Nome",
+      email: "Email",
+      phone: "Telefono",
+      trip: "Escursione di interesse",
+      tripPlaceholder: "es. Abu Dabbab",
+      message: "Messaggio",
+      messagePlaceholder: "Raccontaci del tuo viaggio...",
+      send: "Invia messaggio",
+      thankYou: "Grazie!",
+      thankYouMessage: "Il tuo messaggio è stato ricevuto. Il nostro team ti contatterà a breve.",
+      location: "Posizione",
+      whatsapp: "Chat su WhatsApp"
+    },
+    footer: {
+      tagline: "DOVE IL DESERTO INCONTRA IL MARE",
+      description: "Esperienze indimenticabili dove il Mar Rosso incontra il deserto dorato. Mare, deserto e cielo – bellezza infinita a Marsa Alam, Egitto.",
+      descriptionAr: "حيث تلتقي الصحراء بالبحر — مرسى تورز",
+      quickLinks: "Link Rapidi",
+      contactTitle: "Contatto",
+      location: "Marsa Alam, Egitto",
+      phone: "+20 122 494 1412",
+      email: "info@marsa.tours",
+      website: "www.marsa.tours",
+      rights: "Tutti i diritti riservati.",
+      rightsAr: "جميع الحقوق محفوظة لمرسى تورز"
+    }
   }
 } as const
 
 export type Language = keyof typeof translations
-export const languages: Language[] = ['en', 'pl', 'ar']
+export const languages: Language[] = ['en', 'pl', 'ar', 'de', 'it']
 export const languageNames = {
   en: 'English',
   pl: 'Polski',
-  ar: 'العربية'
+  ar: 'العربية',
+  de: 'Deutsch',
+  it: 'Italiano'
 }
