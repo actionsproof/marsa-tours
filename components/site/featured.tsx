@@ -1,37 +1,44 @@
+'use client'
+
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
-
-const experiences = [
-  {
-    title: "Sea Adventures",
-    text: "Snorkeling, boat trips and coral reefs teeming with turtles and colorful marine life.",
-    image: "/images/exp-sea.png",
-    cta: "View Trips",
-  },
-  {
-    title: "Desert Safari",
-    text: "Jeep safari, Bedouin dinner and unforgettable sunset tours across golden dunes.",
-    image: "/images/exp-desert.png",
-    cta: "View Safari",
-  },
-  {
-    title: "Relax & Discover",
-    text: "Relaxation, pristine beaches and charming coastal towns waiting to be explored.",
-    image: "/images/exp-beach.png",
-    cta: "Explore More",
-  },
-]
+import { useLanguage } from "@/components/simple-language-switcher"
+import { translations } from "@/lib/translations"
 
 export function Featured() {
+  const lang = useLanguage()
+  const t = translations[lang]?.featured || translations.en.featured
+
+  const experiences = [
+    {
+      title: translations[lang]?.about.sea || "Sea Adventures",
+      text: lang === 'pl' ? 'Snorkeling, wycieczki łodzią i rafy koralowe pełne żółwi i kolorowego życia morskiego.' : lang === 'ar' ? 'الغطس ورحلات القوارب والشعاب المرجانية المليئة بالسلاحف والحياة البحرية الملونة.' : "Snorkeling, boat trips and coral reefs teeming with turtles and colorful marine life.",
+      image: "/images/exp-sea.png",
+      cta: lang === 'pl' ? 'Zobacz Wycieczki' : lang === 'ar' ? 'عرض الرحلات' : "View Trips",
+    },
+    {
+      title: translations[lang]?.about.desert || "Desert Safari",
+      text: lang === 'pl' ? 'Safari jeepem, kolacja beduińska i niezapomniane wycieczki o zachodzie słońca przez złote wydmy.' : lang === 'ar' ? 'رحلة سفاري بالجيب، عشاء بدوي وجولات غروب الشمس عبر الكثبان الذهبية.' : "Jeep safari, Bedouin dinner and unforgettable sunset tours across golden dunes.",
+      image: "/images/exp-desert.png",
+      cta: lang === 'pl' ? 'Zobacz Safari' : lang === 'ar' ? 'عرض السفاري' : "View Safari",
+    },
+    {
+      title: lang === 'pl' ? 'Relaks i Odkrywanie' : lang === 'ar' ? 'استرخي واستكشف' : "Relax & Discover",
+      text: lang === 'pl' ? 'Relaks, dziewicze plaże i urocze nadmorskie miasteczka czekające na odkrycie.' : lang === 'ar' ? 'الاسترخاء والشواطئ النقية والمدن الساحلية الساحرة في انتظار الاستكشاف.' : "Relaxation, pristine beaches and charming coastal towns waiting to be explored.",
+      image: "/images/exp-beach.png",
+      cta: lang === 'pl' ? 'Odkryj Więcej' : lang === 'ar' ? 'استكشف المزيد' : "Explore More",
+    },
+  ]
+
   return (
     <section id="experiences" className="bg-muted/40 py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <span className="inline-block rounded-full bg-gold/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold">
-            Featured Experiences
+            {t.title}
           </span>
           <h2 className="mt-5 font-heading text-3xl font-bold text-primary text-balance md:text-4xl">
-            Three ways to fall in love with Marsa Alam
+            {lang === 'pl' ? 'Trzy sposoby, aby zakochać się w Marsa Alam' : lang === 'ar' ? 'ثلاث طرق للوقوع في حب مرسى علم' : 'Three ways to fall in love with Marsa Alam'}
           </h2>
         </div>
 

@@ -1,13 +1,9 @@
+'use client'
+
 import Image from "next/image"
 import type { SVGProps } from "react"
-
-const quickLinks = [
-  { label: "About", href: "#about" },
-  { label: "Experiences", href: "#experiences" },
-  { label: "Trips", href: "#trips" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "Contact", href: "#contact" },
-]
+import { useLanguage } from "@/components/simple-language-switcher"
+import { translations } from "@/lib/translations"
 
 function FacebookIcon(props: SVGProps<SVGSVGElement>) {
   return (
@@ -52,6 +48,18 @@ const socials = [
 ]
 
 export function SiteFooter() {
+  const lang = useLanguage()
+  const t = translations[lang]?.footer || translations.en.footer
+  const nav = translations[lang]?.nav || translations.en.nav
+
+  const quickLinks = [
+    { label: nav.about, href: "#about" },
+    { label: nav.experiences, href: "#experiences" },
+    { label: nav.trips, href: "#trips" },
+    { label: nav.reviews, href: "#reviews" },
+    { label: nav.contact, href: "#contact" },
+  ]
+
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 md:grid-cols-2 md:px-6 lg:grid-cols-4">
@@ -69,16 +77,15 @@ export function SiteFooter() {
                 MARSA <span className="text-gold">TOURS</span>
               </span>
               <span className="text-[10px] font-medium tracking-[0.2em] text-primary-foreground/70">
-                WHERE DESERT MEETS THE SEA
+                {t.tagline}
               </span>
             </span>
           </div>
           <p className="mt-5 max-w-md leading-relaxed text-primary-foreground/80">
-            Unforgettable experiences where the Red Sea meets the golden desert. Sea, desert and
-            sky — endless beauty in Marsa Alam, Egypt.
+            {t.description}
           </p>
           <p className="mt-3 font-arabic text-primary-foreground/70" dir="rtl">
-            حيث تلتقي الصحراء بالبحر — مرسى تورز
+            {t.descriptionAr}
           </p>
 
           <div className="mt-6 flex gap-3">
@@ -97,7 +104,7 @@ export function SiteFooter() {
 
         <div>
           <h3 className="font-heading text-sm font-bold uppercase tracking-widest text-gold">
-            Quick Links
+            {t.quickLinks}
           </h3>
           <ul className="mt-4 flex flex-col gap-2.5">
             {quickLinks.map((link) => (
@@ -115,23 +122,23 @@ export function SiteFooter() {
 
         <div>
           <h3 className="font-heading text-sm font-bold uppercase tracking-widest text-gold">
-            Contact
+            {t.contactTitle}
           </h3>
           <ul className="mt-4 flex flex-col gap-2.5 text-primary-foreground/80">
-            <li>Marsa Alam, Egypt</li>
+            <li>{t.location}</li>
             <li>
-              <a href="tel:+201224941412" className="transition-colors hover:text-gold">
-                +20 122 494 1412
+              <a href={`tel:${t.phone.replace(/\s/g, '')}`} className="transition-colors hover:text-gold">
+                {t.phone}
               </a>
             </li>
             <li>
-              <a href="mailto:info@marsa.tours" className="transition-colors hover:text-gold">
-                info@marsa.tours
+              <a href={`mailto:${t.email}`} className="transition-colors hover:text-gold">
+                {t.email}
               </a>
             </li>
             <li>
               <a href="#" className="transition-colors hover:text-gold">
-                www.marsa.tours
+                {t.website}
               </a>
             </li>
           </ul>
@@ -140,9 +147,9 @@ export function SiteFooter() {
 
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-5 text-sm text-primary-foreground/70 md:flex-row md:px-6">
-          <p>© {new Date().getFullYear()} Marsa Tours. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Marsa Tours. {t.rights}</p>
           <p className="font-arabic" dir="rtl">
-            جميع الحقوق محفوظة لمرسى تورز
+            {t.rightsAr}
           </p>
         </div>
       </div>
