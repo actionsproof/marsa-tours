@@ -2,15 +2,20 @@
 
 import { useState } from "react"
 import { Phone, Mail, MapPin, MessageCircle, Send, CheckCircle2 } from "lucide-react"
-
-const details = [
-  { icon: Phone, label: "Phone", value: "+20 122 494 1412", href: "tel:+201224941412" },
-  { icon: Mail, label: "Email", value: "info@marsa.tours", href: "mailto:info@marsa.tours" },
-  { icon: MapPin, label: "Location", value: "Marsa Alam, Egypt", href: "#map" },
-]
+import { useLanguage } from "@/components/simple-language-switcher"
+import { translations } from "@/lib/translations"
 
 export function Contact() {
   const [sent, setSent] = useState(false)
+  const lang = useLanguage()
+  const t = translations[lang]?.contact || translations.en.contact
+  const ft = translations[lang]?.footer || translations.en.footer
+
+  const details = [
+    { icon: Phone, label: lang === 'pl' ? 'Telefon' : lang === 'ar' ? 'هاتف' : 'Phone', value: ft.phone, href: `tel:${ft.phone.replace(/\s/g, '')}` },
+    { icon: Mail, label: 'Email', value: ft.email, href: `mailto:${ft.email}` },
+    { icon: MapPin, label: lang === 'pl' ? 'Lokalizacja' : lang === 'ar' ? 'موقع' : 'Location', value: ft.location, href: "#map" },
+  ]
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -22,13 +27,13 @@ export function Contact() {
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <span className="inline-block rounded-full bg-secondary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-secondary">
-            Get in Touch
+            {t.title}
           </span>
           <h2 className="mt-5 font-heading text-3xl font-bold text-primary text-balance md:text-4xl">
-            Marsa Alam is calling
+            {lang === 'pl' ? 'Marsa Alam wzywa' : lang === 'ar' ? 'مرسى علم تناديك' : 'Marsa Alam is calling'}
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Tell us your dream trip and we&apos;ll craft the perfect itinerary for you.
+            {t.description}
           </p>
         </div>
 
@@ -37,27 +42,29 @@ export function Contact() {
             {sent ? (
               <div className="flex h-full min-h-72 flex-col items-center justify-center text-center">
                 <CheckCircle2 className="h-14 w-14 text-secondary" />
-                <h3 className="mt-4 font-heading text-2xl font-bold text-primary">Thank you!</h3>
+                <h3 className="mt-4 font-heading text-2xl font-bold text-primary">
+                  {lang === 'pl' ? 'Dziękujemy!' : lang === 'ar' ? 'شكراً لك!' : 'Thank you!'}
+                </h3>
                 <p className="mt-2 text-muted-foreground">
-                  Your message has been received. Our team will be in touch shortly.
+                  {lang === 'pl' ? 'Twoja wiadomość została otrzymana. Nasz zespół skontaktuje się z Tobą wkrótce.' : lang === 'ar' ? 'تم استلام رسالتك. سيتواصل معك فريقنا قريباً.' : 'Your message has been received. Our team will be in touch shortly.'}
                 </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <Field label="Full name" name="name" placeholder="Your name" />
+                  <Field label={t.name} name="name" placeholder={t.name} />
                   <Field label="Email" name="email" type="email" placeholder="you@email.com" />
                 </div>
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <Field label="Phone" name="phone" placeholder="+20 ..." />
-                  <Field label="Trip of interest" name="trip" placeholder="e.g. Abu Dabbab" />
+                  <Field label={lang === 'pl' ? 'Telefon' : lang === 'ar' ? 'هاتف' : 'Phone'} name="phone" placeholder="+20 ..." />
+                  <Field label={lang === 'pl' ? 'Interesująca wycieczka' : lang === 'ar' ? 'الرحلة المهتم بها' : 'Trip of interest'} name="trip" placeholder={lang === 'pl' ? 'np. Abu Dabbab' : 'e.g. Abu Dabbab'} />
                 </div>
                 <label className="flex flex-col gap-1.5 text-sm font-medium text-foreground">
-                  Message
+                  {t.message}
                   <textarea
                     name="message"
                     rows={4}
-                    placeholder="Tell us about your trip..."
+                    placeholder={lang === 'pl' ? 'Opowiedz nam o swojej wycieczce...' : lang === 'ar' ? 'أخبرنا عن رحلتك...' : 'Tell us about your trip...'}
                     className="rounded-xl border border-input bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-secondary focus:ring-2 focus:ring-secondary/30"
                   />
                 </label>
@@ -66,7 +73,7 @@ export function Contact() {
                   className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.02]"
                 >
                   <Send className="h-4 w-4" />
-                  Send Message
+                  {t.send}
                 </button>
               </form>
             )}
@@ -100,7 +107,7 @@ export function Contact() {
               className="inline-flex items-center justify-center gap-2 rounded-full bg-secondary px-6 py-3.5 text-sm font-semibold text-secondary-foreground shadow-sm transition-transform hover:scale-[1.02]"
             >
               <MessageCircle className="h-5 w-5" />
-              Chat on WhatsApp
+              {lang === 'pl' ? 'Czat na WhatsApp' : lang === 'ar' ? 'دردشة عبر واتساب' : 'Chat on WhatsApp'}
             </a>
 
             <div id="map" className="overflow-hidden rounded-3xl shadow-sm ring-1 ring-border">

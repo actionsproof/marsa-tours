@@ -4,9 +4,8 @@ import { useState } from "react"
 import Image from "next/image"
 import { trips, type Trip } from "@/lib/trips"
 import { cn } from "@/lib/utils"
-
-const categories = ["All", "Sea", "Desert", "Culture", "Service"] as const
-type Category = (typeof categories)[number]
+import { useLanguage } from "@/components/simple-language-switcher"
+import { translations } from "@/lib/translations"
 
 const categoryStyles: Record<Trip["category"], string> = {
   Sea: "bg-secondary/10 text-secondary",
@@ -16,39 +15,49 @@ const categoryStyles: Record<Trip["category"], string> = {
 }
 
 export function TripsCatalog() {
-  const [active, setActive] = useState<Category>("All")
+  const [active, setActive] = useState<string>("All")
+  const lang = useLanguage()
+  const t = translations[lang]?.trips || translations.en.trips
 
-  const filtered = active === "All" ? trips : trips.filter((t) => t.category === active)
+  const categories = [
+    { value: "All", label: t.all },
+    { value: "Sea", label: t.sea },
+    { value: "Desert", label: t.desert },
+    { value: "Culture", label: t.culture },
+    { value: "Service", label: t.service },
+  ]
+
+  const filtered = active === "All" ? trips : trips.filter((tr) => tr.category === active)
 
   return (
     <section id="trips" className="bg-background py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <span className="inline-block rounded-full bg-secondary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-secondary">
-            Trips Catalog
+            {t.title}
           </span>
           <h2 className="mt-5 font-heading text-3xl font-bold text-primary text-balance md:text-4xl">
-            Find your next adventure
+            {lang === 'pl' ? 'Znajdź swoją następną przygodę' : lang === 'ar' ? 'اعثر على مغامرتك القادمة' : 'Find your next adventure'}
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Sea, desert and culture — handpicked trips across Marsa Alam and beyond.
+            {lang === 'pl' ? 'Morze, pustynia i kultura — starannie wybrane wycieczki w Marsa Alam i okolicach.' : lang === 'ar' ? 'البحر والصحراء والثقافة — رحلات مختارة بعناية في مرسى علم وما وراءها.' : 'Sea, desert and culture — handpicked trips across Marsa Alam and beyond.'}
           </p>
         </div>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
           {categories.map((cat) => (
             <button
-              key={cat}
+              key={cat.value}
               type="button"
-              onClick={() => setActive(cat)}
+              onClick={() => setActive(cat.value)}
               className={cn(
                 "rounded-full px-5 py-2 text-sm font-semibold transition-colors",
-                active === cat
+                active === cat.value
                   ? "bg-primary text-primary-foreground shadow-sm"
                   : "bg-muted text-muted-foreground hover:bg-muted/70",
               )}
             >
-              {cat}
+              {cat.label}
             </button>
           ))}
         </div>
@@ -90,7 +99,7 @@ export function TripsCatalog() {
                     href="#contact"
                     className="rounded-full bg-secondary px-5 py-2.5 text-sm font-semibold text-secondary-foreground transition-transform hover:scale-105"
                   >
-                    Book Now
+                    {t.bookNow}
                   </a>
                 </div>
               </div>

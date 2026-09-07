@@ -1,31 +1,35 @@
+'use client'
+
 import Image from "next/image"
 import { Waves, Mountain, Sun } from "lucide-react"
-
-const highlights = [
-  { icon: Waves, label: "Red Sea Adventures" },
-  { icon: Mountain, label: "Desert Safaris" },
-  { icon: Sun, label: "Sun & Culture" },
-]
+import { useLanguage } from "@/components/simple-language-switcher"
+import { translations } from "@/lib/translations"
 
 export function About() {
+  const lang = useLanguage()
+  const t = translations[lang]?.about || translations.en.about
+
+  const highlights = [
+    { icon: Waves, label: t.sea },
+    { icon: Mountain, label: t.desert },
+    { icon: Sun, label: t.culture },
+  ]
+
   return (
     <section id="about" className="bg-background py-20 md:py-28">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 md:px-6 lg:grid-cols-2 lg:gap-16">
         <div>
           <span className="inline-block rounded-full bg-secondary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-secondary">
-            About Marsa Tours
+            {t.title}
           </span>
           <h2 className="mt-5 font-heading text-3xl font-bold text-primary text-balance md:text-4xl">
-            Unforgettable journeys between two worlds
+            {translations[lang]?.hero.title || translations.en.hero.title}
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
-            We create unforgettable experiences where the Red Sea meets the golden desert. From
-            coral reefs teeming with life to endless dunes glowing at sunset, Marsa Tours brings
-            you closer to the natural wonders of Marsa Alam, Egypt.
+            {t.description}
           </p>
           <p className="mt-4 font-arabic text-lg leading-loose text-muted-foreground" dir="rtl">
-            نصنع تجارب لا تُنسى حيث تلتقي الصحراء الذهبية بمياه البحر الأحمر. من الشعاب المرجانية
-            النابضة بالحياة إلى الكثبان الرملية اللامتناهية، تأخذك مرسى تورز إلى قلب الطبيعة في مرسى علم.
+            {translations.ar.about.description}
           </p>
 
           <div className="mt-8 grid grid-cols-3 gap-4">
@@ -53,7 +57,9 @@ export function About() {
           </div>
           <div className="absolute -bottom-6 -left-6 hidden rounded-2xl bg-primary px-6 py-5 text-primary-foreground shadow-lg sm:block">
             <p className="font-heading text-3xl font-bold text-gold">15+</p>
-            <p className="text-sm text-primary-foreground/90">Curated experiences</p>
+            <p className="text-sm text-primary-foreground/90">
+              {lang === 'pl' ? 'Kuratorowanych doświadczeń' : lang === 'ar' ? 'تجارب منسقة' : 'Curated experiences'}
+            </p>
           </div>
         </div>
       </div>
