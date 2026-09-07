@@ -1,7 +1,14 @@
+'use client'
+
 import Image from "next/image"
 import { ArrowRight, Phone } from "lucide-react"
+import { useLanguage } from "@/components/simple-language-switcher"
+import { translations } from "@/lib/translations"
 
 export function Hero() {
+  const lang = useLanguage()
+  const t = translations[lang]?.hero || translations.en.hero
+
   return (
     <section id="home" className="relative flex min-h-screen items-center justify-center overflow-hidden">
       <Image
@@ -29,7 +36,7 @@ export function Hero() {
         <div className="mt-4 flex items-center gap-3">
           <span className="h-px w-8 bg-gold" />
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-white md:text-base">
-            Where Desert Meets the Sea
+            {t.title}
           </p>
           <span className="h-px w-8 bg-gold" />
         </div>
@@ -42,7 +49,7 @@ export function Hero() {
             href="#trips"
             className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-7 py-3.5 text-base font-semibold text-ink shadow-lg transition-transform hover:scale-105"
           >
-            Explore Trips
+            {t.cta}
             <ArrowRight className="h-5 w-5" />
           </a>
           <a
@@ -50,15 +57,15 @@ export function Hero() {
             className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/70 bg-white/10 px-7 py-3.5 text-base font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white hover:text-primary"
           >
             <Phone className="h-5 w-5" />
-            Contact Us
+            {translations[lang]?.nav.contact || translations.en.nav.contact}
           </a>
         </div>
       </div>
 
       <div className="absolute bottom-0 left-0 right-0 z-10 flex items-center justify-center gap-6 bg-primary/60 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-white backdrop-blur-sm md:gap-12 md:text-sm">
-        <span>Sea</span>
+        <span>{translations[lang]?.about.sea || 'Sea'}</span>
         <span className="h-1 w-1 rounded-full bg-gold" />
-        <span>Desert</span>
+        <span>{translations[lang]?.about.desert || 'Desert'}</span>
         <span className="h-1 w-1 rounded-full bg-gold" />
         <span>Sun &amp; Sky</span>
       </div>
