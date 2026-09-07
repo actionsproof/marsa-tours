@@ -4,19 +4,22 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
-
-const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Experiences", href: "#experiences" },
-  { label: "Trips", href: "#trips" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "Contact", href: "#contact" },
-]
+import { SimpleLanguageSwitcher, useLanguage } from "@/components/simple-language-switcher"
+import { translations } from "@/lib/translations"
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const lang = useLanguage()
+  const t = translations[lang]?.nav || translations.en.nav
+
+  const navLinks = [
+    { label: t.about, href: "#about" },
+    { label: t.experiences, href: "#experiences" },
+    { label: t.trips, href: "#trips" },
+    { label: t.reviews, href: "#reviews" },
+    { label: t.contact, href: "#contact" },
+  ]
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -77,12 +80,15 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <a
-          href="#trips"
-          className="hidden rounded-full bg-secondary px-5 py-2.5 text-sm font-semibold text-secondary-foreground shadow-sm transition-transform hover:scale-105 lg:inline-flex"
-        >
-          Explore Trips
-        </a>
+        <div className="hidden items-center gap-3 lg:flex">
+          <SimpleLanguageSwitcher />
+          <a
+            href="#trips"
+            className="rounded-full bg-secondary px-5 py-2.5 text-sm font-semibold text-secondary-foreground shadow-sm transition-transform hover:scale-105"
+          >
+            {t.trips}
+          </a>
+        </div>
 
         <button
           type="button"
@@ -110,12 +116,15 @@ export function SiteHeader() {
                 {link.label}
               </a>
             ))}
+            <div className="px-3 py-2">
+              <SimpleLanguageSwitcher />
+            </div>
             <a
               href="#trips"
               onClick={() => setOpen(false)}
               className="mt-2 mb-2 rounded-full bg-secondary px-5 py-3 text-center text-sm font-semibold text-secondary-foreground"
             >
-              Explore Trips
+              {t.trips}
             </a>
           </nav>
         </div>
