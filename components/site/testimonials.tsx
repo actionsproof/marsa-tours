@@ -15,10 +15,10 @@ export function Testimonials() {
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <span className="inline-block rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold">
-            {lang === 'pl' ? 'Opinie' : lang === 'ar' ? 'شهادات' : 'Testimonials'}
+            {t.title}
           </span>
           <h2 className="mt-5 font-heading text-3xl font-bold text-white text-balance md:text-4xl">
-            {lang === 'pl' ? 'Kochani przez podróżników z całego świata' : lang === 'ar' ? 'محبوب من قبل المسافرين من جميع أنحاء العالم' : 'Loved by travelers from around the world'}
+            {t.subtitle}
           </h2>
         </div>
 

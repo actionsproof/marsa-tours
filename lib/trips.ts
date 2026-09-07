@@ -1,8 +1,11 @@
 export type Trip = {
   slug: string
   title: string
+  titlePl: string
   titleAr: string
   description: string
+  descriptionPl: string
+  descriptionAr: string
   price: string
   category: "Sea" | "Desert" | "Culture" | "Service"
   image: string
@@ -12,8 +15,11 @@ export const trips: Trip[] = [
   {
     slug: "airport-transfers",
     title: "Airport Transfers",
+    titlePl: "Transfer z Lotniska",
     titleAr: "خدمة النقل من المطار",
     description: "Comfortable private transfers between Marsa Alam Airport and your hotel, on time, every time.",
+    descriptionPl: "Wygodny prywatny transfer między lotniskiem Marsa Alam a Twoim hotelem, zawsze na czas.",
+    descriptionAr: "نقل خاص مريح بين مطار مرسى علم وفندقك، في الموعد المحدد، في كل مرة.",
     price: "From €20",
     category: "Service",
     image: "/images/trip-transfer.png",
@@ -21,8 +27,11 @@ export const trips: Trip[] = [
   {
     slug: "abu-dabbab",
     title: "Abu Dabbab",
+    titlePl: "Abu Dabbab",
     titleAr: "أبو دباب",
     description: "Swim with dugongs and sea turtles in one of the Red Sea's most beautiful sheltered bays.",
+    descriptionPl: "Pływaj z dugongami i żółwiami morskimi w jednej z najpiękniejszych osłoniętych zatok Morza Czerwonego.",
+    descriptionAr: "اسبح مع أبقار البحر والسلاحف البحرية في واحدة من أجمل الخلجان المحمية في البحر الأحمر.",
     price: "From €35",
     category: "Sea",
     image: "/images/trip-abu-dabbab.png",
@@ -30,8 +39,11 @@ export const trips: Trip[] = [
   {
     slug: "marsa-mubarak",
     title: "Marsa Mubarak",
+    titlePl: "Marsa Mubarak",
     titleAr: "مرسى مبارك",
     description: "Snorkel over seagrass meadows and vibrant coral home to turtles and colorful reef fish.",
+    descriptionPl: "Nurkuj nad łąkami traw morskich i żywymi koralowcami, domem żółwi i kolorowych ryb rafowych.",
+    descriptionAr: "اغطس فوق مروج الأعشاب البحرية والشعاب المرجانية النابضة بالحياة موطن السلاحف والأسماك الملونة.",
     price: "€50 (Snorkeling) • €95 (Diving) • €95 (Intro Dive)",
     category: "Sea",
     image: "/images/trip-marsa-mubarak.png",
@@ -39,8 +51,11 @@ export const trips: Trip[] = [
   {
     slug: "coral-garden",
     title: "Coral Garden",
+    titlePl: "Ogród Koralowy",
     titleAr: "حديقة المرجان",
     description: "Explore stunning coral formations teeming with colorful marine life in crystal-clear waters.",
+    descriptionPl: "Odkryj wspaniałe formacje koralowe pełne kolorowego życia morskiego w krystalicznie czystych wodach.",
+    descriptionAr: "استكشف تشكيلات مرجانية مذهلة تعج بالحياة البحرية الملونة في مياه صافية.",
     price: "€50 (Snorkeling) • €70 (Diving) • €95 (Intro Dive)",
     category: "Sea",
     image: "/images/trip-marsa-mubarak.png",
@@ -48,8 +63,11 @@ export const trips: Trip[] = [
   {
     slug: "samadi-dolphin",
     title: "Samadi Dolphin",
+    titlePl: "Samadi Dolphin",
     titleAr: "سمادي دولفين",
     description: "Swim with wild dolphins in their natural habitat - an unforgettable Red Sea experience.",
+    descriptionPl: "Pływaj z dzikimi delfinami w ich naturalnym środowisku - niezapomniane doświadczenie na Morzu Czerwonym.",
+    descriptionAr: "اسبح مع الدلافين البرية في موطنها الطبيعي - تجربة لا تُنسى في البحر الأحمر.",
     price: "€58 (Snorkeling) • €105 (Diving) • €80 (Intro Dive)",
     category: "Sea",
     image: "/images/trip-hamata.png",
@@ -57,8 +75,11 @@ export const trips: Trip[] = [
   {
     slug: "sharm-el-luli",
     title: "Sharm El Luli",
+    titlePl: "Sharm El Luli",
     titleAr: "شرم اللولي",
     description: "Relax on powder-white sand beside the clearest turquoise lagoon on the coast.",
+    descriptionPl: "Zrelaksuj się na białym jak puder piasku obok najczystszej turkusowej laguny na wybrzeżu.",
+    descriptionAr: "استرخ على الرمال البيضاء الناعمة بجوار البحيرة الفيروزية الأكثر صفاءً على الساحل.",
     price: "€40 (Half Day) • €55 (Full Day)",
     category: "Sea",
     image: "/images/trip-sharm-el-luli.png",
@@ -66,8 +87,11 @@ export const trips: Trip[] = [
   {
     slug: "hamata-islands",
     title: "Hamata Islands",
+    titlePl: "Wyspy Hamata",
     titleAr: "جزر حماطة",
     description: "A full-day boat trip to pristine islands, mangroves and untouched snorkeling spots.",
+    descriptionPl: "Całodniowa wycieczka łodzią do dziewiczych wysp, namorzyn i nienaruszonych miejsc do nurkowania.",
+    descriptionAr: "رحلة بالقارب ليوم كامل إلى جزر نقية وأشجار المانغروف وأماكن غطس بكر.",
     price: "€60",
     category: "Sea",
     image: "/images/trip-hamata.png",
@@ -75,8 +99,11 @@ export const trips: Trip[] = [
   {
     slug: "sataya-day",
     title: "Sataya (Day Trip)",
+    titlePl: "Sataya (Jednodniowa)",
     titleAr: "ستايا (رحلة يوم)",
     description: "Visit the famous Dolphin Reef for an incredible day of swimming with spinner dolphins.",
+    descriptionPl: "Odwiedź słynną Rafę Delfinów na niesamowity dzień pływania z delfinami wirującymi.",
+    descriptionAr: "قم بزيارة الشعاب المرجانية الشهيرة للدلافين ليوم لا يُصدق من السباحة مع الدلافين الدوارة.",
     price: "€105",
     category: "Sea",
     image: "/images/trip-hamata.png",
@@ -84,8 +111,11 @@ export const trips: Trip[] = [
   {
     slug: "sataya-overnight",
     title: "Sataya (Overnight)",
+    titlePl: "Sataya (Z Noclegiem)",
     titleAr: "ستايا (رحلة مبيت)",
     description: "Two-day liveaboard adventure to Sataya Reef with dolphins, pristine reefs, and starlit nights.",
+    descriptionPl: "Dwudniowa przygoda na pokładzie statku do Rafy Sataya z delfinami, dziewiczymi rafami i gwiaździstymi nocami.",
+    descriptionAr: "مغامرة مبيت لمدة يومين إلى شعاب ستايا مع الدلافين والشعاب البكر والليالي المرصعة بالنجوم.",
     price: "€180 (Snorkeling) • €260 (Diving) • €210 (Intro Dive)",
     category: "Sea",
     image: "/images/trip-hamata.png",
@@ -93,8 +123,11 @@ export const trips: Trip[] = [
   {
     slug: "sea-scope",
     title: "Sea Scope",
+    titlePl: "Sea Scope",
     titleAr: "سي سكوب",
     description: "Discover the underwater world in comfort aboard a semi-submarine — no swimming required.",
+    descriptionPl: "Odkryj podwodny świat w komforcie na pokładzie półłodzi podwodnej — pływanie nie jest wymagane.",
+    descriptionAr: "اكتشف العالم تحت الماء بشكل مريح على متن غواصة نصفية - لا حاجة للسباحة.",
     price: "From $28",
     category: "Sea",
     image: "/images/trip-sea-scope.png",
@@ -102,8 +135,11 @@ export const trips: Trip[] = [
   {
     slug: "nefertari-yacht",
     title: "Nefertari Yacht",
+    titlePl: "Jacht Nefertari",
     titleAr: "يخت نفرتاري",
     description: "A private luxury yacht cruise with snorkeling stops, lunch and endless sea views.",
+    descriptionPl: "Prywatny luksusowy rejs jachtem z przystankami do nurkowania, lunchem i niekończącymi się widokami na morze.",
+    descriptionAr: "رحلة بحرية خاصة فاخرة على متن يخت مع محطات للغطس والغداء وإطلالات بحرية لا نهاية لها.",
     price: "From $75",
     category: "Sea",
     image: "/images/trip-yacht.png",
@@ -111,8 +147,11 @@ export const trips: Trip[] = [
   {
     slug: "rosetta",
     title: "Rosetta",
+    titlePl: "Rosetta",
     titleAr: "روزيتا",
     description: "A relaxed day cruise with sun decks, swimming and reef snorkeling for the whole family.",
+    descriptionPl: "Relaksujący rejs dzienny z tarasami słonecznymi, pływaniem i nurkowaniem na rafie dla całej rodziny.",
+    descriptionAr: "رحلة بحرية يومية مريحة مع أسطح تشمس وسباحة وغطس على الشعاب المرجانية لجميع أفراد الأسرة.",
     price: "From $50",
     category: "Sea",
     image: "/images/trip-rosetta.png",
@@ -120,8 +159,11 @@ export const trips: Trip[] = [
   {
     slug: "wadi-el-gemal",
     title: "Wadi El Gemal",
+    titlePl: "Wadi El Gemal",
     titleAr: "وادي الجمال",
     description: "Explore a protected national park of desert valleys, wildlife and ancient landscapes.",
+    descriptionPl: "Odkryj chroniony park narodowy z pustynnych dolin, dzikiej przyrody i starożytnych krajobrazów.",
+    descriptionAr: "استكشف حديقة وطنية محمية من الوديان الصحراوية والحياة البرية والمناظر الطبيعية القديمة.",
     price: "From $45",
     category: "Desert",
     image: "/images/trip-wadi-el-gemal.png",
@@ -129,8 +171,11 @@ export const trips: Trip[] = [
   {
     slug: "super-safari",
     title: "Super Safari",
+    titlePl: "Super Safari",
     titleAr: "سفاري خارق",
     description: "Jeep adventure across the dunes with a Bedouin dinner, camel ride and sunset views.",
+    descriptionPl: "Przygoda jeepem przez wydmy z kolacją beduińską, przejażdżką na wielbłądach i widokami zachodu słońca.",
+    descriptionAr: "مغامرة بالجيب عبر الكثبان مع عشاء بدوي وركوب الجمال ومشاهدة غروب الشمس.",
     price: "From $38",
     category: "Desert",
     image: "/images/trip-safari.png",
@@ -138,8 +183,11 @@ export const trips: Trip[] = [
   {
     slug: "luxor",
     title: "Luxor (Day / Overnight)",
+    titlePl: "Luxor (Dzień / Nocleg)",
     titleAr: "الأقصر (يوم / مبيت)",
     description: "Visit Karnak, the Valley of the Kings and the temples of the world's greatest open-air museum.",
+    descriptionPl: "Odwiedź Karnak, Dolinę Królów i świątynie największego muzeum na świeżym powietrzu na świecie.",
+    descriptionAr: "قم بزيارة الكرنك ووادي الملوك ومعابد أعظم متحف في الهواء الطلق في العالم.",
     price: "From $85",
     category: "Culture",
     image: "/images/trip-luxor.png",
@@ -147,8 +195,11 @@ export const trips: Trip[] = [
   {
     slug: "aswan",
     title: "Aswan (Day / Overnight + Abu Simbel)",
+    titlePl: "Asuan (Dzień / Nocleg + Abu Simbel)",
     titleAr: "أسوان (يوم / مبيت + أبو سمبل)",
     description: "Discover the Nile, the High Dam and the magnificent temples of Abu Simbel.",
+    descriptionPl: "Odkryj Nil, Wysoką Tamę i wspaniałe świątynie Abu Simbel.",
+    descriptionAr: "اكتشف النيل والسد العالي ومعابد أبو سمبل الرائعة.",
     price: "From $95",
     category: "Culture",
     image: "/images/trip-aswan.png",
@@ -156,8 +207,11 @@ export const trips: Trip[] = [
   {
     slug: "cairo",
     title: "Cairo (Day / Overnight)",
+    titlePl: "Kair (Dzień / Nocleg)",
     titleAr: "القاهرة (يوم / مبيت)",
     description: "Stand before the Great Pyramids, the Sphinx and the treasures of the Egyptian Museum.",
+    descriptionPl: "Stań przed Wielkimi Piramidami, Sfinksem i skarbami Muzeum Egipskiego.",
+    descriptionAr: "قف أمام الأهرامات العظيمة وأبو الهول وكنوز المتحف المصري.",
     price: "From $110",
     category: "Culture",
     image: "/images/trip-cairo.png",
@@ -165,8 +219,11 @@ export const trips: Trip[] = [
   {
     slug: "city-tours",
     title: "City Tours",
+    titlePl: "Wycieczki Miejskie",
     titleAr: "جولات المدينة",
     description: "Explore local markets, coastal towns and hidden gems with a friendly local guide.",
+    descriptionPl: "Odkryj lokalne targi, nadmorskie miasteczka i ukryte klejnoty z przyjaznym lokalnym przewodnikiem.",
+    descriptionAr: "استكشف الأسواق المحلية والمدن الساحلية والجواهر الخفية مع دليل محلي ودود.",
     price: "From $25",
     category: "Culture",
     image: "/images/trip-city-tours.png",
@@ -174,8 +231,11 @@ export const trips: Trip[] = [
   {
     slug: "diving-course",
     title: "Diving Course",
+    titlePl: "Kurs Nurkowania",
     titleAr: "دورة الغوص",
     description: "Learn to scuba dive with certified instructors on the Red Sea's spectacular reefs.",
+    descriptionPl: "Naucz się nurkować z akwalungiem z certyfikowanymi instruktorami na spektakularnych rafach Morza Czerwonego.",
+    descriptionAr: "تعلم الغوص مع مدربين معتمدين على الشعاب المرجانية الرائعة في البحر الأحمر.",
     price: "From €60 / $65 (Intro Dive) • €60 / $65 (Full Course)",
     category: "Sea",
     image: "/images/trip-diving.png",

@@ -58,7 +58,7 @@ export function About() {
           <div className="absolute -bottom-6 -left-6 hidden rounded-2xl bg-primary px-6 py-5 text-primary-foreground shadow-lg sm:block">
             <p className="font-heading text-3xl font-bold text-gold">15+</p>
             <p className="text-sm text-primary-foreground/90">
-              {lang === 'pl' ? 'Kuratorowanych doświadczeń' : lang === 'ar' ? 'تجارب منسقة' : 'Curated experiences'}
+              {t.experiencesCount}
             </p>
           </div>
         </div>

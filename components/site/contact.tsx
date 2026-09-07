@@ -12,9 +12,9 @@ export function Contact() {
   const ft = translations[lang]?.footer || translations.en.footer
 
   const details = [
-    { icon: Phone, label: lang === 'pl' ? 'Telefon' : lang === 'ar' ? 'هاتف' : 'Phone', value: ft.phone, href: `tel:${ft.phone.replace(/\s/g, '')}` },
+    { icon: Phone, label: t.phone, value: ft.phone, href: `tel:${ft.phone.replace(/\s/g, '')}` },
     { icon: Mail, label: 'Email', value: ft.email, href: `mailto:${ft.email}` },
-    { icon: MapPin, label: lang === 'pl' ? 'Lokalizacja' : lang === 'ar' ? 'موقع' : 'Location', value: ft.location, href: "#map" },
+    { icon: MapPin, label: t.location, value: ft.location, href: "#map" },
   ]
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -30,7 +30,7 @@ export function Contact() {
             {t.title}
           </span>
           <h2 className="mt-5 font-heading text-3xl font-bold text-primary text-balance md:text-4xl">
-            {lang === 'pl' ? 'Marsa Alam wzywa' : lang === 'ar' ? 'مرسى علم تناديك' : 'Marsa Alam is calling'}
+            {t.subtitle}
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             {t.description}
@@ -43,10 +43,10 @@ export function Contact() {
               <div className="flex h-full min-h-72 flex-col items-center justify-center text-center">
                 <CheckCircle2 className="h-14 w-14 text-secondary" />
                 <h3 className="mt-4 font-heading text-2xl font-bold text-primary">
-                  {lang === 'pl' ? 'Dziękujemy!' : lang === 'ar' ? 'شكراً لك!' : 'Thank you!'}
+                  {t.thankYou}
                 </h3>
                 <p className="mt-2 text-muted-foreground">
-                  {lang === 'pl' ? 'Twoja wiadomość została otrzymana. Nasz zespół skontaktuje się z Tobą wkrótce.' : lang === 'ar' ? 'تم استلام رسالتك. سيتواصل معك فريقنا قريباً.' : 'Your message has been received. Our team will be in touch shortly.'}
+                  {t.thankYouMessage}
                 </p>
               </div>
             ) : (
@@ -56,15 +56,15 @@ export function Contact() {
                   <Field label="Email" name="email" type="email" placeholder="you@email.com" />
                 </div>
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <Field label={lang === 'pl' ? 'Telefon' : lang === 'ar' ? 'هاتف' : 'Phone'} name="phone" placeholder="+20 ..." />
-                  <Field label={lang === 'pl' ? 'Interesująca wycieczka' : lang === 'ar' ? 'الرحلة المهتم بها' : 'Trip of interest'} name="trip" placeholder={lang === 'pl' ? 'np. Abu Dabbab' : 'e.g. Abu Dabbab'} />
+                  <Field label={t.phone} name="phone" placeholder="+20 ..." />
+                  <Field label={t.trip} name="trip" placeholder={t.tripPlaceholder} />
                 </div>
                 <label className="flex flex-col gap-1.5 text-sm font-medium text-foreground">
                   {t.message}
                   <textarea
                     name="message"
                     rows={4}
-                    placeholder={lang === 'pl' ? 'Opowiedz nam o swojej wycieczce...' : lang === 'ar' ? 'أخبرنا عن رحلتك...' : 'Tell us about your trip...'}
+                    placeholder={t.messagePlaceholder}
                     className="rounded-xl border border-input bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-secondary focus:ring-2 focus:ring-secondary/30"
                   />
                 </label>
@@ -107,7 +107,7 @@ export function Contact() {
               className="inline-flex items-center justify-center gap-2 rounded-full bg-secondary px-6 py-3.5 text-sm font-semibold text-secondary-foreground shadow-sm transition-transform hover:scale-[1.02]"
             >
               <MessageCircle className="h-5 w-5" />
-              {lang === 'pl' ? 'Czat na WhatsApp' : lang === 'ar' ? 'دردشة عبر واتساب' : 'Chat on WhatsApp'}
+              {t.whatsapp}
             </a>
 
             <div id="map" className="overflow-hidden rounded-3xl shadow-sm ring-1 ring-border">

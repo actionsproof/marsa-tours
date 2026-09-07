@@ -41,7 +41,7 @@ export function Hero() {
           <span className="h-px w-8 bg-gold" />
         </div>
         <p className="mt-3 font-arabic text-lg text-white/90 md:text-xl" dir="rtl">
-          حيث تلتقي الصحراء بالبحر
+          {t.arabicTitle}
         </p>
 
         <div className="mt-9 flex flex-col gap-4 sm:flex-row">
@@ -63,11 +63,11 @@ export function Hero() {
       </div>
 
       <div className="absolute bottom-0 left-0 right-0 z-10 flex items-center justify-center gap-6 bg-primary/60 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-white backdrop-blur-sm md:gap-12 md:text-sm">
-        <span>{translations[lang]?.about.sea || 'Sea'}</span>
+        <span>{t.sea}</span>
         <span className="h-1 w-1 rounded-full bg-gold" />
-        <span>{translations[lang]?.about.desert || 'Desert'}</span>
+        <span>{t.desert}</span>
         <span className="h-1 w-1 rounded-full bg-gold" />
-        <span>Sun &amp; Sky</span>
+        <span>{t.sunSky}</span>
       </div>
     </section>
   )

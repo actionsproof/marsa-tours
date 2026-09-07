@@ -11,22 +11,22 @@ export function Featured() {
 
   const experiences = [
     {
-      title: translations[lang]?.about.sea || "Sea Adventures",
-      text: lang === 'pl' ? 'Snorkeling, wycieczki łodzią i rafy koralowe pełne żółwi i kolorowego życia morskiego.' : lang === 'ar' ? 'الغطس ورحلات القوارب والشعاب المرجانية المليئة بالسلاحف والحياة البحرية الملونة.' : "Snorkeling, boat trips and coral reefs teeming with turtles and colorful marine life.",
+      title: t.seaTitle,
+      text: t.seaDesc,
       image: "/images/exp-sea.png",
-      cta: lang === 'pl' ? 'Zobacz Wycieczki' : lang === 'ar' ? 'عرض الرحلات' : "View Trips",
+      cta: t.seaCta,
     },
     {
-      title: translations[lang]?.about.desert || "Desert Safari",
-      text: lang === 'pl' ? 'Safari jeepem, kolacja beduińska i niezapomniane wycieczki o zachodzie słońca przez złote wydmy.' : lang === 'ar' ? 'رحلة سفاري بالجيب، عشاء بدوي وجولات غروب الشمس عبر الكثبان الذهبية.' : "Jeep safari, Bedouin dinner and unforgettable sunset tours across golden dunes.",
+      title: t.desertTitle,
+      text: t.desertDesc,
       image: "/images/exp-desert.png",
-      cta: lang === 'pl' ? 'Zobacz Safari' : lang === 'ar' ? 'عرض السفاري' : "View Safari",
+      cta: t.desertCta,
     },
     {
-      title: lang === 'pl' ? 'Relaks i Odkrywanie' : lang === 'ar' ? 'استرخي واستكشف' : "Relax & Discover",
-      text: lang === 'pl' ? 'Relaks, dziewicze plaże i urocze nadmorskie miasteczka czekające na odkrycie.' : lang === 'ar' ? 'الاسترخاء والشواطئ النقية والمدن الساحلية الساحرة في انتظار الاستكشاف.' : "Relaxation, pristine beaches and charming coastal towns waiting to be explored.",
+      title: t.relaxTitle,
+      text: t.relaxDesc,
       image: "/images/exp-beach.png",
-      cta: lang === 'pl' ? 'Odkryj Więcej' : lang === 'ar' ? 'استكشف المزيد' : "Explore More",
+      cta: t.relaxCta,
     },
   ]
 
@@ -38,7 +38,7 @@ export function Featured() {
             {t.title}
           </span>
           <h2 className="mt-5 font-heading text-3xl font-bold text-primary text-balance md:text-4xl">
-            {lang === 'pl' ? 'Trzy sposoby, aby zakochać się w Marsa Alam' : lang === 'ar' ? 'ثلاث طرق للوقوع في حب مرسى علم' : 'Three ways to fall in love with Marsa Alam'}
+            {t.subtitle}
           </h2>
         </div>
 

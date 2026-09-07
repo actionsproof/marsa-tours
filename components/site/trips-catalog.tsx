@@ -37,10 +37,10 @@ export function TripsCatalog() {
             {t.title}
           </span>
           <h2 className="mt-5 font-heading text-3xl font-bold text-primary text-balance md:text-4xl">
-            {lang === 'pl' ? 'Znajdź swoją następną przygodę' : lang === 'ar' ? 'اعثر على مغامرتك القادمة' : 'Find your next adventure'}
+            {t.subtitle}
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            {lang === 'pl' ? 'Morze, pustynia i kultura — starannie wybrane wycieczki w Marsa Alam i okolicach.' : lang === 'ar' ? 'البحر والصحراء والثقافة — رحلات مختارة بعناية في مرسى علم وما وراءها.' : 'Sea, desert and culture — handpicked trips across Marsa Alam and beyond.'}
+            {t.description}
           </p>
         </div>
 
@@ -63,48 +63,55 @@ export function TripsCatalog() {
         </div>
 
         <div className="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
-          {filtered.map((trip) => (
-            <article
-              key={trip.slug}
-              className="group flex flex-col overflow-hidden rounded-3xl bg-card shadow-sm ring-1 ring-border transition-all hover:-translate-y-1 hover:shadow-xl"
-            >
-              <div className="relative aspect-[3/2] overflow-hidden">
-                <Image
-                  src={trip.image || "/placeholder.svg"}
-                  alt={trip.title}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <span
-                  className={cn(
-                    "absolute left-4 top-4 rounded-full px-3 py-1 text-xs font-semibold backdrop-blur-sm",
-                    categoryStyles[trip.category],
-                  )}
-                >
-                  {trip.category}
-                </span>
-              </div>
-              <div className="flex flex-1 flex-col p-6">
-                <h3 className="font-heading text-lg font-bold text-primary">{trip.title}</h3>
-                <p className="font-arabic text-sm text-muted-foreground" dir="rtl">
-                  {trip.titleAr}
-                </p>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
-                  {trip.description}
-                </p>
-                <div className="mt-5 flex items-center justify-between">
-                  <span className="font-heading text-lg font-bold text-gold">{trip.price}</span>
-                  <a
-                    href="#contact"
-                    className="rounded-full bg-secondary px-5 py-2.5 text-sm font-semibold text-secondary-foreground transition-transform hover:scale-105"
+          {filtered.map((trip) => {
+            const title = lang === 'pl' ? trip.titlePl : lang === 'ar' ? trip.titleAr : trip.title
+            const description = lang === 'pl' ? trip.descriptionPl : lang === 'ar' ? trip.descriptionAr : trip.description
+            
+            return (
+              <article
+                key={trip.slug}
+                className="group flex flex-col overflow-hidden rounded-3xl bg-card shadow-sm ring-1 ring-border transition-all hover:-translate-y-1 hover:shadow-xl"
+              >
+                <div className="relative aspect-[3/2] overflow-hidden">
+                  <Image
+                    src={trip.image || "/placeholder.svg"}
+                    alt={title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <span
+                    className={cn(
+                      "absolute left-4 top-4 rounded-full px-3 py-1 text-xs font-semibold backdrop-blur-sm",
+                      categoryStyles[trip.category],
+                    )}
                   >
-                    {t.bookNow}
-                  </a>
+                    {trip.category}
+                  </span>
                 </div>
-              </div>
-            </article>
-          ))}
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="font-heading text-lg font-bold text-primary">{title}</h3>
+                  {lang !== 'ar' && (
+                    <p className="font-arabic text-sm text-muted-foreground" dir="rtl">
+                      {trip.titleAr}
+                    </p>
+                  )}
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
+                    {description}
+                  </p>
+                  <div className="mt-5 flex items-center justify-between">
+                    <span className="font-heading text-lg font-bold text-gold">{trip.price}</span>
+                    <a
+                      href="#contact"
+                      className="rounded-full bg-secondary px-5 py-2.5 text-sm font-semibold text-secondary-foreground transition-transform hover:scale-105"
+                    >
+                      {t.bookNow}
+                    </a>
+                  </div>
+                </div>
+              </article>
+            )
+          })}
         </div>
       </div>
     </section>
