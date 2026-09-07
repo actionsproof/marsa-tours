@@ -34,11 +34,34 @@ export const metadata: Metadata = {
     'snorkeling',
     'diving',
   ],
+  icons: {
+    icon: [
+      { url: '/marsa-logo.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+    apple: '/apple-icon.png',
+    shortcut: '/marsa-logo.png',
+  },
   openGraph: {
     title: 'Marsa Tours | Where Desert Meets the Sea',
     description:
       'Unforgettable experiences where the Red Sea meets the golden desert.',
     type: 'website',
+    images: [
+      {
+        url: '/marsa-logo-full.png',
+        width: 1200,
+        height: 630,
+        alt: 'Marsa Tours - Where Desert Meets the Sea',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Marsa Tours | Where Desert Meets the Sea',
+    description:
+      'Unforgettable experiences where the Red Sea meets the golden desert.',
+    images: ['/marsa-logo-full.png'],
   },
 }
 
