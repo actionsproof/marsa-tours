@@ -46,7 +46,7 @@ function WebsiteIcon(props: SVGProps<SVGSVGElement>) {
 
 const socials = [
   { icon: FacebookIcon, label: "Facebook", href: "https://www.facebook.com/share/14shNZ44F6t/" },
-  { icon: InstagramIcon, label: "Instagram", href: "#" },
+  { icon: InstagramIcon, label: "Instagram", href: "https://www.instagram.com/marsatoursa?stkn=Z3c3MnBudWV3NTgw" },
   { icon: WhatsappIcon, label: "WhatsApp", href: "https://wa.me/201224941412" },
   { icon: WebsiteIcon, label: "Website", href: "#" },
 ]
