@@ -25,7 +25,6 @@ export const metadata: Metadata = {
   title: 'Marsa Tours | Where Desert Meets the Sea',
   description:
     'Marsa Tours creates unforgettable experiences in Marsa Alam, Egypt — where the Red Sea meets the golden desert. Explore sea adventures, desert safaris, and cultural day trips.',
-  generator: 'v0.app',
   keywords: [
     'Marsa Tours',
     'Marsa Alam',
